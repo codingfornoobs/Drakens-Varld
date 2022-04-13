@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="21" height="21" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+function morphshape51(ctx,ctrans,frame,ratio,time){
+	var pathData="M -211 -211 -151 -151 L -211 -211 -149 -151 -191 -155 0 -30 Q -189 -152 1 -23 -186 -149 -13 -16 L -179 -150 -55 -54 Q -164 -148 -98 -86 -148 -138 -103 -102 L -138 -131 -102 -99 Q -122 -113 -101 -88 -97 -79 -22 -37 L -96 -79 -21 -37 -93 -73 -31 -45 -93 -73 -33 -47 Q -100 -103 -111 -141 -99 -88 -161 -159 -97 -80 -179 -194 -96 -73 -196 -187 -87 -66 -221 -180 -74 -62 -200 -163 L -74 -60 -198 -161 -62 -34 -163 -146 -52 4 -111 -122 -52 2 -109 -125 Q -39 -30 -150 -196 -27 7 -190 -180 L -18 5 -206 -197 Q -7 27 -221 -198 35 49 -198 -199 L 49 48 -189 -215 49 48 -197 -222 48 58 -222 -237 Q 59 75 -260 -252 103 118 -228 -253 L 114 151 -269 -251 Q 127 147 -307 -309 139 162 -344 -319 152 183 -376 -318 160 203 -384 -318 L 170 211 -381 -315 Q 184 208 -369 -351 211 206 -315 -387 L 206 202 -371 -437 204 177 -403 -420 204 175 -409 -417 204 165 -421 -417 202 151 -437 -405 177 132 -420 -391 175 128 -417 -388 165 122 -417 -383 Q 125 84 -382 -355 77 40 -353 -332 L 40 10 -332 -313 Q 15 -12 -318 -297 -9 -33 -300 -282 L -33 -55 -282 -267 -71 -88 -255 -242 -75 -90 -253 -240 Q -82 -96 -247 -236 -88 -103 -242 -235 L -88 -105 -240 -235 -90 -107 -240 -233 Q -97 -112 -235 -229 -105 -117 -235 -226 L -140 -148 -208 -202 -148 -156 -202 -200 -150 -158 -202 -200 -158 -164 -200 -196 -176 -180 -187 -185 -180 -182 -185 -181 -186 -188 -174 -172 -188 -191 -172 -170 -211 -211 -151 -151";
+	ctx.fillStyle=tocolor(ctrans.apply([Math.round(0+ratio*(0)/65535),Math.round(0+ratio*(0)/65535),Math.round(0+ratio*(1)/65535),((Math.round(255+ratio*(0)/65535))/255)]));
+	drawMorphPath(ctx,pathData,ratio,false);
+
+	ctx.fill("evenodd");
+	var pathData="M -211 -211 -151 -151 L -188 -191 -172 -170 -186 -188 -174 -172 -180 -182 -185 -181 -176 -180 -187 -185 -158 -164 -200 -196 -150 -158 -202 -200 -148 -156 -202 -200 -140 -148 -208 -202 -105 -117 -235 -226 Q -97 -112 -235 -229 -90 -107 -240 -233 L -88 -105 -240 -235 -88 -103 -242 -235 Q -82 -96 -247 -236 -75 -90 -253 -240 L -71 -88 -255 -242 -33 -55 -282 -267 -9 -33 -300 -282 Q 15 -12 -318 -297 40 10 -332 -313 L 77 40 -353 -332 Q 125 84 -382 -355 165 122 -417 -383 L 175 128 -417 -388 177 132 -420 -391 202 151 -437 -405 204 165 -421 -417 204 175 -409 -417 204 177 -403 -420 206 202 -371 -437 211 206 -315 -387 Q 184 208 -369 -351 170 211 -381 -315 L 160 203 -384 -318 Q 152 183 -376 -318 139 162 -344 -319 127 147 -307 -309 114 151 -269 -251 L 103 118 -228 -253 Q 59 75 -260 -252 48 58 -222 -237 L 49 48 -197 -222 49 48 -189 -215 35 49 -198 -199 Q -7 27 -221 -198 -18 5 -206 -197 L -27 7 -190 -180 Q -39 -30 -150 -196 -52 2 -109 -125 L -52 4 -111 -122 -62 -34 -163 -146 -74 -60 -198 -161 -74 -62 -200 -163 Q -87 -66 -221 -180 -96 -73 -196 -187 -97 -80 -179 -194 -99 -88 -161 -159 -100 -103 -111 -141 -93 -73 -33 -47 L -93 -73 -31 -45 -96 -79 -21 -37 -97 -79 -22 -37 Q -122 -113 -101 -88 -138 -131 -102 -99 L -148 -138 -103 -102 Q -164 -148 -98 -86 -179 -150 -55 -54 L -186 -149 -13 -16 Q -189 -152 1 -23 -191 -155 0 -30 L -211 -211 -149 -151 -211 -211 -151 -151";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([Math.round(0+ratio*(0)/65535),Math.round(0+ratio*(0)/65535),Math.round(0+ratio*(1)/65535),((Math.round(0+ratio*(0)/65535))/255)]));
+	ctx.lineWidth=0.0+ratio*(0)/65535;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawMorphPath(ctx,pathData,ratio,true,scaleMode);
+
+}
+
+var originalWidth=21;
+var originalHeight=21;
+ function drawFrame(ctx,ratio){
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	place("morphshape51",canvas,ctx,[0.05,0.0,0.0,0.05,10.55,21.85],ctrans,1,0,ratio,0);
+	ctx.restore();
+}
+var step = 655;
+var ratio = -1;
+function nextFrame(ctx){
+	ctx.clearRect(0,0,21,21);
+	ratio = (ratio+step)%65535;
+	drawFrame(ctx,ratio);
+}
+window.setInterval(function(){nextFrame(ctx)},10);
+</script>
+</body>
+</html>
