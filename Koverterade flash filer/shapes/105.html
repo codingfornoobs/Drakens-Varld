@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="17" height="58" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+function shape105(ctx,ctrans,frame,ratio,time){
+	var pathData="M 200 103 Q 235 35 290 0 310 1 314 10 L 317 30 Q 317 41 326 51 293 55 265 101 237 147 215 221 192 295 175 382 L 146 557 125 716 114 832 110 877 112 910 107 988 Q 101 1035 79 1081 57 1127 10 1157 0 1089 0 1049 0 1009 9 983 18 957 33 930 L 65 861 Q 76 830 82 766 L 95 616 112 437 Q 123 344 144 257 165 170 200 103";
+	ctx.fillStyle=tocolor(ctrans.apply([255,255,255,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 200 103 Q 165 170 144 257 123 344 112 437 L 95 616 82 766 Q 76 830 65 861 L 33 930 Q 18 957 9 983 0 1009 0 1049 0 1089 10 1157 57 1127 79 1081 101 1035 107 988 L 112 910 110 877 114 832 125 716 146 557 175 382 Q 192 295 215 221 237 147 265 101 293 55 326 51 317 41 317 30 L 314 10 Q 310 1 290 0 235 35 200 103 Z";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([0,0,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+var originalWidth=17;
+var originalHeight=58;
+ function drawFrame(){
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	place("shape105",canvas,ctx,[0.05,0.0,0.0,0.05,0.5,0.5],ctrans,1,0,0,0);
+	ctx.restore();
+}
+	drawFrame();
+</script>
+</body>
+</html>

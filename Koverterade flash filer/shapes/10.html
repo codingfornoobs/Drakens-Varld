@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="32" height="47" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+function shape10(ctx,ctrans,frame,ratio,time){
+	var pathData="M 215 -284 L 197 -252 134 -190 151 -222 215 -284";
+	ctx.fillStyle=tocolor(ctrans.apply([87,127,19,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 151 -222 L 134 -190 29 -212 46 -244 151 -222";
+	ctx.fillStyle=tocolor(ctrans.apply([118,172,26,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 46 -244 L 29 -212 27 -258 44 -290 46 -244";
+	ctx.fillStyle=tocolor(ctrans.apply([80,116,18,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 45 -290 L 215 -284 151 -222 47 -244 45 -290";
+	ctx.fillStyle=tocolor(ctrans.apply([140,204,31,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -20 -334 L 57 -340 52 22 -25 28 -20 -334";
+	ctx.fillStyle=tocolor(ctrans.apply([148,214,49,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 2 -559 L 79 -565 58 -340 -19 -334 2 -559";
+	ctx.fillStyle=tocolor(ctrans.apply([134,192,44,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -29 -594 L 1 -560 -20 -335 -25 27 -51 -3 -48 -358 -29 -594";
+	ctx.fillStyle=tocolor(ctrans.apply([89,128,29,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 109 -541 L 27 -507 -42 -558 -29 -643 53 -677 123 -626 109 -541";
+	ctx.fillStyle=tocolor(ctrans.apply([255,127,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 58 -690 L 35 -663 114 -877 137 -904 58 -690";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 121 -634 L 58 -676 61 -676 59 -690 138 -904 263 -831 121 -634";
+	ctx.fillStyle=tocolor(ctrans.apply([240,240,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 115 -638 L 92 -611 35 -648 58 -675 115 -638";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 101 -570 L 78 -543 91 -611 114 -638 101 -570";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -20 -670 L -43 -643 -147 -855 -124 -882 -20 -670";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 326 -459 L 303 -432 84 -533 107 -560 326 -459";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 58 -675 L 35 -648 -35 -633 -12 -660 58 -675";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 100 -563 L 114 -637 121 -633 124 -638 361 -595 326 -459 100 -563";
+	ctx.fillStyle=tocolor(ctrans.apply([240,240,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 62 -676 L -15 -659 -124 -882 12 -919 62 -676";
+	ctx.fillStyle=tocolor(ctrans.apply([240,240,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -36 -591 L -59 -564 -296 -623 -273 -650 -36 -591";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -31 -589 L -37 -591 -274 -650 -230 -783 -21 -670 -16 -659 -12 -660 -31 -589";
+	ctx.fillStyle=tocolor(ctrans.apply([240,240,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 199 -339 L 176 -312 40 -276 63 -303 199 -339";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 63 -303 L 40 -276 6 -515 29 -542 63 -303";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 101 -569 L 100 -563 107 -560 200 -339 63 -303 29 -542 32 -546 101 -569";
+	ctx.fillStyle=tocolor(ctrans.apply([240,240,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -30 -593 L 33 -547 29 -542 -100 -344 -212 -436 -37 -591 -31 -589 -30 -593";
+	ctx.fillStyle=tocolor(ctrans.apply([240,240,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -100 -345 L -123 -318 -235 -410 -212 -437 -100 -345";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -273 -650 L -296 -623 -252 -756 -229 -783 -273 -650";
+	ctx.fillStyle=tocolor(ctrans.apply([128,128,0,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+}
+
+var originalWidth=32;
+var originalHeight=47;
+ function drawFrame(){
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	place("shape10",canvas,ctx,[0.05,0.0,0.0,0.05,14.8,45.95],ctrans,1,0,0,0);
+	ctx.restore();
+}
+	drawFrame();
+</script>
+</body>
+</html>

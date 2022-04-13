@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="20" height="49" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+function shape114(ctx,ctrans,frame,ratio,time){
+	var pathData="M -13 62 L 51 18 Q 106 -18 121 20 L 128 49 130 60 Q 145 145 163 225 L 206 410 237 536 Q 277 567 302 619 327 670 341 732 355 793 360 855 L 367 967 Q 330 972 300 948 270 924 248 885 226 846 210 806 L 188 739 180 710 186 755 Q 193 798 220 862 248 925 310 987 242 968 196 946 150 924 126 881 103 839 101 758 99 678 119 543 84 463 55 355 29 258 10 150 L 5 125 -13 62";
+	ctx.fillStyle=tocolor(ctrans.apply([156,87,18,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -13 62 L 5 125 10 150 Q 29 258 55 355 84 463 119 543 99 678 101 758 103 839 126 881 150 924 196 946 242 968 310 987 248 925 220 862 193 798 186 755 L 180 710 188 739 210 806 Q 226 846 248 885 270 924 300 948 330 972 367 967 L 360 855 Q 355 793 341 732 327 670 302 619 277 567 237 536 L 206 410 163 225 Q 145 145 130 60 L 128 49 121 20";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([0,0,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+var originalWidth=20;
+var originalHeight=49;
+ function drawFrame(){
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	place("shape114",canvas,ctx,[0.05,0.0,0.0,0.05,1.15,0.0],ctrans,1,0,0,0);
+	ctx.restore();
+}
+	drawFrame();
+</script>
+</body>
+</html>
