@@ -2,13 +2,18 @@
 
 Detta är alla filerna till Drakens Värld (flash-spelet)
 
+Någon gång i Feburari 2022 blev spelet bortaget helt (även legacywebgames sidan)
+
+
+Jag tänker göra så att alla kan återleva spelet efter 2 år. Detta innebär inge mer flash, men HTML5 blir det nu!
+
 ---
 
 Namn: Drakens Värld
 
 Släpptes: 1 oktober 2005
 
-Nedlagt: 
+Nedlagt: 7 december 2020
 
 Utvecklare: Tewonder och SVT Interaktiv
 
