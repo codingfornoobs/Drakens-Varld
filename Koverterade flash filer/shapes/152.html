@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="161" height="169" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+function shape152(ctx,ctrans,frame,ratio,time){
+	var pathData="M -534 -991 L -531 -991 -446 -1303 -261 -1643 9 -1916 319 -2083 631 -2131 946 -2091 979 -2081 1266 -1928 1326 -1876 1561 -1631 Q 1785 -1296 1824 -991 L 1846 -916 1851 -836 Q 1965 -58 1537 621 L 1534 624 1506 669 1374 787 Q 1259 847 1104 957 L 1056 997 Q 897 1047 884 1067 706 1131 409 1067 L 406 1067 406 1064 Q 372 1036 244 999 L 191 957 Q 39 848 -84 784 L -209 674 -241 624 -244 620 Q -648 66 -559 -836 L -561 -836 -559 -838 -559 -846 -554 -916 -534 -988 -534 -991";
+	ctx.fillStyle=tocolor(ctrans.apply([177,151,113,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -534 -991 L -534 -988 -554 -916 -559 -846 -559 -838 -561 -836 Q -875 -1063 -534 -991 M 1851 -836 L 1846 -916 1824 -991 Q 2165 -1049 1851 -836";
+	ctx.fillStyle=tocolor(ctrans.apply([95,63,42,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M -244 620 L -241 624 -209 674 -84 784 Q 39 848 191 957 L 244 999 Q 372 1036 406 1064 L 406 1067 Q 469 1245 171 1259 -291 1278 -954 1112 -1038 1083 -736 789 L -544 684 Q -270 608 -244 620 M 884 1067 Q 897 1047 1056 997 L 1104 957 Q 1259 847 1374 787 L 1506 669 1534 624 1537 621 Q 1561 607 1836 684 L 2029 789 2189 952 Q 2289 1083 2249 1109 1915 1228 1196 1262 832 1279 884 1067";
+	ctx.fillStyle=tocolor(ctrans.apply([87,63,112,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+}
+
+var originalWidth=161;
+var originalHeight=169;
+ function drawFrame(){
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	place("shape152",canvas,ctx,[0.05,0.0,0.0,0.05,48.6,106.55],ctrans,1,0,0,0);
+	ctx.restore();
+}
+	drawFrame();
+</script>
+</body>
+</html>

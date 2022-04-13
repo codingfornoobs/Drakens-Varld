@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript" src="canvas.js"></script><style type="text/css">#resizable {position:relative; display:inline-block; margin:0; padding:0;font-size:0px;} #width_size {width:10px; position:absolute; right:-5px; top:0px; bottom:0px; cursor:e-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #height_size {height:10px; position:absolute; bottom:-5px; left:0px; right:0px; cursor:n-resize;-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;} #myCanvas {margin:0; padding:0;} </style></head><body>
+
+<div id="resizable"><canvas id="myCanvas" width="16" height="58" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas><div id="width_size">&nbsp;</div><div id="height_size">&nbsp;</div></div>
+
+<script>var canvas=document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+enhanceContext(ctx);
+var ctrans = new cxform(0,0,0,0,255,255,255,255);
+function shape175(ctx,ctrans,frame,ratio,time){
+	var pathData="M 132 1094 Q 117 1071 121 1037 125 1004 160 968 155 905 137 816 L 94 624 47 419 Q 24 317 11 229 -3 142 1 82 4 22 33 4 62 -11 94 32 127 75 158 160 190 245 218 354 245 462 265 578 284 694 292 799 300 904 293 981 315 1025 309 1068 302 1111 268 1144 L 132 1094";
+	ctx.fillStyle=tocolor(ctrans.apply([124,72,6,1]));
+	drawPath(ctx,pathData,false);
+	ctx.fill("evenodd");
+	var pathData="M 132 1094 Q 117 1071 121 1037 125 1004 160 968 155 905 137 816 L 94 624 47 419 Q 24 317 11 229 -3 142 1 82 4 22 33 4 62 -11 94 32 127 75 158 160 190 245 218 354 245 462 265 578 284 694 292 799 300 904 293 981 315 1025 309 1068 302 1111 268 1144";
+	var scaleMode = "NORMAL";
+	ctx.strokeStyle=tocolor(ctrans.apply([0,0,0,1]));
+	ctx.lineWidth=1.0;
+	ctx.lineCap="round";
+	ctx.lineJoin="round";
+	drawPath(ctx,pathData,true,scaleMode);
+
+}
+
+var originalWidth=16;
+var originalHeight=58;
+ function drawFrame(){
+	ctx.save();
+	ctx.transform(canvas.width/originalWidth,0,0,canvas.height/originalHeight,0,0);
+	place("shape175",canvas,ctx,[0.05,0.0,0.0,0.05,0.5,0.5],ctrans,1,0,0,0);
+	ctx.restore();
+}
+	drawFrame();
+</script>
+</body>
+</html>
